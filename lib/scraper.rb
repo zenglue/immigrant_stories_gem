@@ -18,6 +18,9 @@ class Scraper
   end
 
   def scrape_dreamer_profiles
+    profile_url = immigrants.profile_url
+
+    dreamer_attributes = {}
   end
 
 

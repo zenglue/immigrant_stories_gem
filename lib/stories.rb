@@ -12,8 +12,13 @@ class Stories
   @@all = []
 
   def initialize(dreamer=nil)
-    
+    @stories = []
+
+    if dreamer != nil
+      self.dreamer = dreamer
+    end
   end
+
 
 
 

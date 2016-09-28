@@ -2,8 +2,8 @@ require 'nokogiri'
 require 'open-uri'
 require 'pry'
 
-require_relative '../lib/dreamers.rb'
-require_relative '../lib/stories.rb'
+require_relative '../lib/dreamer.rb'
+require_relative '../lib/story.rb'
 
 class Scraper
 

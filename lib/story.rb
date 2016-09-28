@@ -3,15 +3,19 @@ require 'open-uri'
 require 'pry'
 
 require_relative '../lib/scraper.rb'
-require_relative '../lib/dreamers.rb'
+require_relative '../lib/dreamer.rb'
 
 class Story
+
+  attr_accessor :profile
 
   attr_reader :dreamer, :profile_video, :video_transcript
 
   @@all = []
 
   def initialize(dreamer=nil)
+    @dramer = dreamer
+    @profile_url = profile_url
     @stories = []
 
     if dreamer != nil
@@ -19,7 +23,12 @@ class Story
     end
   end
 
-  def self.new_from_profile
+  def self.new_from_profile(profile_url)
+    profile_url = "http://immigrants.mndigital.org/#{proile_url.css("a.exhibit-item.exhibit-gallery-item").attribute("href").text}"
+    self.new tap do |dreamer|
+       profile_url(profile_url) each {|k,v| self.send("#{k}=", v)}
+      end
+    end
   end
 
   def save

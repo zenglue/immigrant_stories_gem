@@ -2,7 +2,7 @@ require 'nokogiri'
 require 'open-uri'
 require 'pry'
 
-require_relative '../lib/immigrant_stories.rb'
+require_relative '../lib/dreamers.rb'
 
 class Scraper
 
@@ -22,12 +22,12 @@ class Scraper
 
     dreamer_attributes = {}
 
-    bio = profile_url.css("[@id='dublin-core-description'] div").text
-    ethnicity = profile_url.css("[@id='item-type-ethnicity'] div a").text
-    region = profile_url.css("[@id='item-type-world-region'] div a").text
-    language = profile_url.css("[@id='dublin-core-language'] div a").text
-    profile_video = profile_file.css("[@id='playlist'] li[1] a").attribute("href").value
-    video_transcript = profile_url.css("[@id='item-transcription'] div").text
+    bio ||= profile_url.css("[@id='dublin-core-description'] div").text
+    ethnicity ||= profile_url.css("[@id='item-type-ethnicity'] div a").text
+    region ||= profile_url.css("[@id='item-type-world-region'] div a").text
+    language ||= profile_url.css("[@id='dublin-core-language'] div a").text
+    profile_video ||= profile_file.css("[@id='playlist'] li[1] a").attribute("href").value
+    video_transcript ||= profile_url.css("[@id='item-transcription'] div").text
 
     dreamer_attributes[:bio] = bio
     dreamer_attributes[:ethnicity] = ethnicity

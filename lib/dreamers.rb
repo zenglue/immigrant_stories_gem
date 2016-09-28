@@ -3,6 +3,7 @@ require 'open-uri'
 require 'pry'
 
 require_relative '../lib/scraper.rb'
+require_relative '../lib/stories.rb'
 
 class Immigrants
 

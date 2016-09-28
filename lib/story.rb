@@ -6,9 +6,7 @@ require_relative '../lib/scraper.rb'
 require_relative '../lib/dreamer.rb'
 
 class Story
-
-  attr_accessor :profile
-
+  
   attr_reader :dreamer, :profile_url, :profile_video, :video_transcript
 
   @@all = []

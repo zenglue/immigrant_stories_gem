@@ -16,7 +16,7 @@ class Story
   def initialize(dreamer=nil)
     @dreamer = dreamer
     @profile_url = profile_url
-    @stories = []
+    @stories = {}
 
     if dreamer != nil
       self.dreamer = dreamer
@@ -32,6 +32,19 @@ class Story
     dreamer.save
     dreamer
   end
+
+  def self.new_from_hash
+    stories = self.new_from_hash
+    stories.dreamer = hash[:dreamer]
+
+    profile_video ||= profile_file.css("[@id='playlist'] li[1] a").attribute("href").value
+    video_transcript ||= profile_url.css("[@id='item-transcription'] div").text
+
+    stories[:profile_video] = profile_video
+    stories[:video_transcript] = video_transcript
+    stories
+  end
+
 
   def save
     @@all << self

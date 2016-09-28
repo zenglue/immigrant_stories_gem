@@ -7,14 +7,13 @@ require_relative '../lib/stories.rb'
 
 class Dreamer
 
-  attr_accessor :name, :bio, :ethnicity, :world_region, :language, :profile_video, :video_transcript, :stories
+  attr_accessor :bio, :ethnicity, :world_region, :language, :profile_video, :video_transcript, :stories
 
   @@all = []
 
-  def initialize(name=nil, profile_url=nil)
-    @name = name
+  def initialize
     @@all << self
-    @stories = []
+    @stories = {}
   end
 
   def self.new_from_profile(profile_url)

@@ -6,7 +6,7 @@ require_relative '../lib/scraper.rb'
 require_relative '../lib/dreamer.rb'
 
 class Story
-  
+
   attr_reader :dreamer, :profile_url, :profile_video, :video_transcript
 
   @@all = []
@@ -23,7 +23,7 @@ class Story
 
   def self.new_from_profile(profile_url)
     profile_url = "http://immigrants.mndigital.org/#{proile_url.css("a.exhibit-item.exhibit-gallery-item").attribute("href").text}"
-    dreamer = self.new tap do |dreamer|
+    dreamer = self.new tap do |dream|
        profile_url(profile_url) each {|k,v| self.send("#{k}=", v)}
       end
     end
@@ -42,7 +42,6 @@ class Story
     stories[:video_transcript] = video_transcript
     stories
   end
-
 
   def save
     @@all << self

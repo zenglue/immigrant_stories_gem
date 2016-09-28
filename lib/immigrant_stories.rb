@@ -13,9 +13,10 @@ class Immigrants
     @profile_url = profile_url
   end
 
-  def self.new_from_profile(info)
+  def self.new_from_profile(dream)
     self.new(
-    info.css("p").text,
-    "http://immigrants.mndigital.org/#{info.css("a.exhibit-item.exhibit-gallery-item").attribute("href").text}"
+    dream.css("p").text,
+    "http://immigrants.mndigital.org/#{dream.css("a.exhibit-item.exhibit-gallery-item").attribute("href").text}"
     )
   end
+end

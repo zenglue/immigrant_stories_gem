@@ -6,14 +6,14 @@ require_relative '../lib/immigrant_stories.rb'
 
 class Scraper
 
-  def scrape_index_profiles
-    index_url = Nokogiri::HTML(open("http://immigrants.mndigital.org/exhibits/show/immigrantstories-exhibit/page01"))
-    name = index_url.css("p").text
-    profile_url = "http://immigrants.mndigital.org/#{index_url.css("a.exhibit-item.exhibit-gallery-item").attribute("href").text}"
+  def get_page
+    Nokogiri::HTML(open("http://immigrants.mndigital.org/exhibits/show/immigrantstories-exhibit/page01"))
   end
 
   def scrape_immigrant_profiles
-
+    dreamers = Nokogiri::HTML(open("http://immigrants.mndigital.org/exhibits/show/immigrantstories-exhibit/page01"))
+    dreamers.css.each do |dream|oj
+      Immigrants.new_from_profile(dream)
 #    profile_url = Nokogiri::HTML(open("http://immigrants.mndigital.org/exhibits/show/immigrantstories-exhibit/item/619"))
 #    binding.pry
   end

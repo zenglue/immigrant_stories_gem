@@ -7,7 +7,7 @@ require_relative '../lib/dreamers.rb'
 
 class Stories
 
-  attr_reader :dreamer
+  attr_reader :dreamer, :profile_video, :video_transcript
 
   @@all = []
 
@@ -30,7 +30,7 @@ class Stories
   def dreamer=(dreamer)
     @dreamer = dreamer
   end
-  
+
 
 
 

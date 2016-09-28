@@ -7,7 +7,7 @@ require_relative '../lib/stories.rb'
 
 class Immigrants
 
-  attr_accessor :name, :bio, :ethnicity, :world_region, :language, :profile_video, :video_transcript, :profile_url
+  attr_accessor :name, :bio, :ethnicity, :world_region, :language, :profile_video, :video_transcript, :profile_url, :stories
 
   @@all = []
 
@@ -15,6 +15,7 @@ class Immigrants
     @name = dreamer_name
     @profile_url = profile_url
     @@all << self
+    @stories = []
   end
 
   def self.new_from_profile(dream)

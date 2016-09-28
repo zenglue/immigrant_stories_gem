@@ -1,3 +1,9 @@
+require 'nokogiri'
+require 'open-uri'
+require 'pry'
+
+require_relative '../lib/scraper.rb'
+
 class Immigrants
 
   attr_accessor :name, :bio, :ethnicity, :world_region, :language, :profile_video, :video_transcript, :profile_url

@@ -17,8 +17,8 @@ class Dreamer
     @stories = []
   end
 
-  def self.new_from_profile(dreamer)
-    dream = scraper.getpage
+  def self.new_from_profile(profile_url)
+    profile_url = scraper.getpage
     self.new tap do |dreamer|
       dream.css("p").text.each {|key,value| self.send("#{key}=", value)}
     end

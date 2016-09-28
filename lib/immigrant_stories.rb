@@ -6,3 +6,10 @@ class Immigrants
     @name = name
     @profile_url = profile_url
   end
+
+  def self.new_from_profile(info)
+    self.new(
+    info.css("p").text,
+    "http://immigrants.mndigital.org/#{info.css("a.exhibit-item.exhibit-gallery-item").attribute("href").text}"
+    )
+  end

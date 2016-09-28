@@ -10,9 +10,11 @@ class Scraper
   end
 
   def scrape_immigrant_profiles
-    doc = Nokogiri::HTML(open("http://immigrants.mndigital.org/exhibits/show/immigrantstories-exhibit/item/619"))
+    profile_url = Nokogiri::HTML(open("http://immigrants.mndigital.org/exhibits/show/immigrantstories-exhibit/item/619"))
     binding.pry
   end
+
+
 end
 
 Scraper.new.get_page
@@ -20,4 +22,5 @@ Scraper.new.get_page
 #names: doc.css("p").text
 #profile_url: doc.css("a.exhibit-item-link").attribute("href").value
 
-#profile_video: doc.css("[@id='playlist'] li[1] a").attribute("href").value
+#profile_video: profile_file.css("[@id='playlist'] li[1] a").attribute("href").value
+#bio: profile_url.css("[@id='dublin-core-description'] div").text

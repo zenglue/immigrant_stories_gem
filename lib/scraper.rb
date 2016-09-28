@@ -27,3 +27,4 @@ Scraper.new.get_page
 #ethnicity: profile_url.css("[@id='item-type-ethnicity'] div a").text
 #region: profile_url.css("[@id='item-type-world-region'] div a").text
 #language: profile_url.css("[@id='dublin-core-language'] div a").text
+##video_transcript: doc.css("[@id='item-transcription'] div").text

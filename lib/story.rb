@@ -9,12 +9,12 @@ class Story
 
   attr_accessor :profile
 
-  attr_reader :dreamer, :profile_video, :video_transcript
+  attr_reader :dreamer, :profile_url, :profile_video, :video_transcript
 
   @@all = []
 
   def initialize(dreamer=nil)
-    @dramer = dreamer
+    @dreamer = dreamer
     @profile_url = profile_url
     @stories = []
 
@@ -25,10 +25,12 @@ class Story
 
   def self.new_from_profile(profile_url)
     profile_url = "http://immigrants.mndigital.org/#{proile_url.css("a.exhibit-item.exhibit-gallery-item").attribute("href").text}"
-    self.new tap do |dreamer|
+    dreamer = self.new tap do |dreamer|
        profile_url(profile_url) each {|k,v| self.send("#{k}=", v)}
       end
     end
+    dreamer.save
+    dreamer
   end
 
   def save
@@ -57,5 +59,4 @@ class Story
 #    @@all.find_all {|langu| langu == language}
     dreamer = @@all.sort_by(language)
   end
-
 end

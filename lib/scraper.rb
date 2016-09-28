@@ -24,3 +24,6 @@ Scraper.new.get_page
 
 #profile_video: profile_file.css("[@id='playlist'] li[1] a").attribute("href").value
 #bio: profile_url.css("[@id='dublin-core-description'] div").text
+#ethnicity: profile_url.css("[@id='item-type-ethnicity'] div a").text
+#region: profile_url.css("[@id='item-type-world-region'] div a").text
+#language: profile_url.css("[@id='dublin-core-language'] div a").text

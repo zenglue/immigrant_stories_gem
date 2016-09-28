@@ -12,7 +12,7 @@ class Immigrants
   @@all = []
 
   def initialize(name=nil, profile_url=nil)
-    @name = name
+    @name = dreamer_name
     @profile_url = profile_url
     @@all << self
   end

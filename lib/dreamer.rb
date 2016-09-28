@@ -47,13 +47,16 @@ class Immigrant
 
   def self.find_by_region(region)
     @@all.find_all {|reg| reg == region}
+    #story.dreamer = @@all.sort_by(region)
   end
 
   def self.find_by_ethnicity(ethnicity)
     @@all.find_all {|ethnic| ethnic == ethnicity}
+    #story.dreamer = @@all.sort_by(ethnicity)
   end
 
   def self.find_by_language(language)
     @@all.find_all {|langu| langu == language}
+    #story.dreamer = @@all.sort_by(language)
   end
 end

@@ -21,6 +21,14 @@ class Scraper
     profile_url = immigrants.profile_url
 
     dreamer_attributes = {}
+
+    bio = profile_url.css("[@id='dublin-core-description'] div").text
+    ethnicity = profile_url.css("[@id='item-type-ethnicity'] div a").text
+    region = profile_url.css("[@id='item-type-world-region'] div a").text
+    language = profile_url.css("[@id='dublin-core-language'] div a").text
+    profile_video = profile_file.css("[@id='playlist'] li[1] a").attribute("href").value
+    video_transcript = profile_url.css("[@id='item-transcription'] div").text
+
   end
 
 

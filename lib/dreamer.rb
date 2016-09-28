@@ -12,7 +12,7 @@ class Immigrants
   @@all = []
 
   def initialize(name=nil, profile_url=nil)
-    @name = dreamer_name
+    @name = name
     @profile_url = profile_url
     @@all << self
     @stories = []
@@ -24,6 +24,13 @@ class Immigrants
     "http://immigrants.mndigital.org/#{dream.css("a.exhibit-item.exhibit-gallery-item").attribute("href").text}"
     )
   end
+
+#  def self.new_from_profile(profile_url)
+#    self.new tap do |dreamer|
+#      @profile_url(profile_url) each {|k,v| self.send("#{k}=", v)}
+#      end
+#    end
+#  end
 
   def self.all
     @@all

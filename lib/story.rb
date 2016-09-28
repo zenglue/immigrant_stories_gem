@@ -19,6 +19,9 @@ class Stories
     end
   end
 
+  def self.new_from_profile
+  end
+
   def save
     @@all << self
   end

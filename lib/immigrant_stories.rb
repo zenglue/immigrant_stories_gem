@@ -31,6 +31,16 @@ class Immigrants
     self.all[id-1]
   end
 
-  
+  def add_dreamer_attributes(dreamers_hash)
+    dreamers_hash.each {|key, value|} self.send(("#{key}=", value))
+  end
 
+  def find_by_region
+  end
+
+  def find_by_ethnicity
+  end
+
+  def find_by_language
+  end
 end

@@ -35,5 +35,6 @@ class Scraper
     dreamer_attributes[:language] = language
     dreamer_attributes[:profile_video] = profile_video
     dreamer_attributes[:video_transcript] = video_transcript
+    dreamer_attributes
   end
 end

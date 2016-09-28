@@ -5,7 +5,7 @@ require 'pry'
 require_relative '../lib/scraper.rb'
 require_relative '../lib/dreamers.rb'
 
-class Stories
+class Story
 
   attr_reader :dreamer, :profile_video, :video_transcript
 

@@ -5,7 +5,7 @@ require 'pry'
 require_relative '../lib/scraper.rb'
 require_relative '../lib/stories.rb'
 
-class Immigrants
+class Immigrant
 
   attr_accessor :name, :bio, :ethnicity, :world_region, :language, :profile_video, :video_transcript, :profile_url, :stories
 
@@ -26,8 +26,9 @@ class Immigrants
   end
 
 #  def self.new_from_profile(profile_url)
+#    profile_url = "http://immigrants.mndigital.org/#{proile_url.css("a.exhibit-item.exhibit-gallery-item").attribute("href").text}"
 #    self.new tap do |dreamer|
-#      @profile_url(profile_url) each {|k,v| self.send("#{k}=", v)}
+#       profile_url(profile_url) each {|k,v| self.send("#{k}=", v)}
 #      end
 #    end
 #  end

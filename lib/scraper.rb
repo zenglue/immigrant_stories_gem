@@ -14,7 +14,7 @@ class Scraper
   def scrape_index_page
     dreamers = Nokogiri::HTML(open("http://immigrants.mndigital.org/exhibits/show/immigrantstories-exhibit/page01"))
     dreamers.css.each do |dream|
-      Immigrants.new_from_profile(dream)
+      Immigrant.new_from_profile(dream)
     end
   end
 

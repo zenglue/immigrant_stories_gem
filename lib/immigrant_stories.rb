@@ -1,2 +1,2 @@
 class Immigrants
-  attr_accessor :name, :bio, :ethnicity, :world_region, :language
+  attr_accessor :name, :bio, :ethnicity, :world_region, :language, :profile_video, :video_transcript

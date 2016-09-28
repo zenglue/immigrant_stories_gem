@@ -17,3 +17,4 @@ end
 Scraper.new.get_page
 
 #names: doc.css("p").text
+#profile_url: doc.css("a.exhibit-item-link").attribute("href").value

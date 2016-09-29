@@ -10,8 +10,20 @@ class CLI
 
   def call
     Scraper.new.scrape_index_page
-    start
+    list
   end
+
+  def list
+    puts ""
+    puts "Whose immigration story would you like to listen to?"
+    puts ""
+    Dreamer.all.each.with_index(1) do |dreamer, i|
+      puts "#{i}. #{dreamer.name}"
+    end
+    puts ""
+  end
+
+
 
   def start
     puts ""

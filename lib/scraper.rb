@@ -4,6 +4,7 @@ require 'pry'
 
 require_relative '../lib/dreamer.rb'
 require_relative '../lib/story.rb'
+require_relative '../lib/cli.rb'
 
 class Scraper
 

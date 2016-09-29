@@ -3,7 +3,7 @@ require 'open-uri'
 require 'pry'
 
 require_relative '../lib/scraper.rb'
-require_relative '../lib/stories.rb'
+require_relative '../lib/story.rb'
 
 class Dreamer
 
@@ -19,7 +19,7 @@ class Dreamer
   def self.new_from_profile(profile_url)
     profile_url = scraper.getpage
     self.new tap do |dreamer|
-      dream.css("p").text.each {|key,value| self.send("#{key}=", value)}
+      dream.css("p").text.each {|key,value| @dreamer.send("#{key}=", value)}
     end
   end
 
@@ -32,6 +32,6 @@ class Dreamer
   end
 
   def add_dreamer_attributes(dreamers_hash)
-    dreamers_hash.each {|key, value|} self.send(("#{key}=", value))
+    dreamers_hash.each {|key, value| self.send("#{key}=", value)}
   end
 end

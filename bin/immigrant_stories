@@ -1,0 +1,7 @@
+#!/usr/bin/env ruby
+
+require_relative '../lib/scraper.rb'
+require_relative '../lib/dreamer.rb'
+require_relative '../lib/story.rb'
+
+CLI.new.call

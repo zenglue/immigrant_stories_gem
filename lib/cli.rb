@@ -1,4 +1,4 @@
-class Cli
+class CLI
 
   def call
     Scraper.new.scrape_index_page

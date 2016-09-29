@@ -9,11 +9,17 @@ require_relative '../lib/cli.rb'
 class Scraper
 
   def scrape_index_page
+<<<<<<< HEAD
     index_url = Nokogiri::HTML(open("http://immigrants.mndigital.org/exhibits/show/immigrantstories-exhibit/page01"))
     index_url.css.map do |dream|
       {
         :name => index_url.css("p").text
       }
+=======
+    dreamers = Nokogiri::HTML(open("http://immigrants.mndigital.org/exhibits/show/immigrantstories-exhibit/page01"))
+    dreamers.css.each do |dream|
+      Dreamer.new_from_profile(dream)
+>>>>>>> parent of 256a833... no more errors, but not scraping either
     end
   end
 

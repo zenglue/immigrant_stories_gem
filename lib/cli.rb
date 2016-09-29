@@ -22,6 +22,7 @@ class CLI
     Dreamer.all.each.with_index(1) do |dreamer, i|
       puts "#{i}. #{dreamer.name}"
     end
+    puts ""
   end
 
   def make_dreamers

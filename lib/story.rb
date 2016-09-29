@@ -33,7 +33,7 @@ class Story
 
   def self.new_from_hash
     stories = self.new_from_hash
-    stories.dreamer = hash[:dreamer]
+    dreamer = hash[:dreamer]
 
     profile_video ||= profile_file.css("[@id='playlist'] li[1] a").attribute("href").value
     video_transcript ||= profile_url.css("[@id='item-transcription'] div").text

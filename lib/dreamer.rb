@@ -8,9 +8,7 @@ require_relative '../lib/cli.rb'
 
 class Dreamer
 
-
   attr_accessor :name, :profile_url, :bio, :ethnicity, :world_region, :language, :stories
-
 
   @@all = []
 
@@ -21,10 +19,12 @@ class Dreamer
     @stories = {}
   end
 
-  def self.new_from_profile(dream)
+  def self.new_from_profile
+    dreamers = Nokogiri::HTML(open("http://immigrants.mndigital.org/exhibits/show/immigrantstories-exhibit/page01"))
+
     self.new(
-    dream.css("p").text,
-    "http://immigrants.mndigital.org/#{dream.css("a.exhibit-item.exhibit-gallery-item").attribute("href").text}"
+    dreamers.css("p").text,
+#    "http://immigrants.mndigital.org/#{dreamers.css("a.exhibit-item.exhibit-gallery-item").attribute("href").text}"
     )
   end
 

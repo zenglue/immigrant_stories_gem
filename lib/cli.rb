@@ -9,6 +9,7 @@ require_relative '../lib/scraper.rb'
 class CLI
 
   def call
+    Scraper.new.new_dreamers
     list
   end
 

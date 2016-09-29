@@ -47,7 +47,6 @@ class Dreamer
     self.all[id-1]
   end
 end
-
 #  def add_dreamer_attributes(dreamers_hash)
 #    dreamers_hash.each {|key, value| self.send("#{key}=", value)}
 #  end

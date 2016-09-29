@@ -9,10 +9,10 @@ require_relative '../lib/cli.rb'
 class Scraper
 
   def scrape_index_page
-    dream = Nokogiri::HTML(open("http://immigrants.mndigital.org/exhibits/show/immigrantstories-exhibit/page01"))
-    dream.css.map do |dream|
-      {        
-        :name => dream.css("p").text
+    index_url = Nokogiri::HTML(open("http://immigrants.mndigital.org/exhibits/show/immigrantstories-exhibit/page01"))
+    index_url.css.map do |dream|
+      {
+        :name => index_url.css("p").text
       }
     end
   end

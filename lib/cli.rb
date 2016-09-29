@@ -8,8 +8,10 @@ require_relative '../lib/scraper.rb'
 
 class CLI
 
+  BASE_URL = "http://immigrants.mndigital.org/exhibits/show/immigrantstories-exhibit/page01"
+
   def call
-    Scraper.new.scrape_index_page
+    make_dreamers
     list
   end
 
@@ -27,7 +29,6 @@ class CLI
     Dreamer.create_from_collection(dreamers_array)
   end
 end
-
 
 #  def start
 #    puts ""

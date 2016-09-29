@@ -13,14 +13,7 @@ class Dreamer
 
 
   @@all = []
-
-  def self.new_from_profile(dream)
-    self.new(
-    dream.css("p").text,
-    "http://immigrants.mndigital.org/#{dream.css("a.exhibit-item.exhibit-gallery-item").attribute("href").text}"
-    )
-    end
-  end
+  
 
   def initialize(name=nil, profile_url=nil)
     @name = name

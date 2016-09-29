@@ -4,18 +4,18 @@ require 'pry'
 
 require_relative '../lib/scraper.rb'
 require_relative '../lib/dreamer.rb'
+require_relative '../lib/cli.rb'
 
 class Story
 
 
-  attr_reader :dreamer, :profile_url, :profile_video, :video_transcript
+  attr_reader :dreamer, :profile_video, :video_transcript
 
   @@all = []
 
 
   def initialize(dreamer=nil)
     @dreamer = dreamer
-    @profile_url = profile_url
     @stories = {}
 
     if dreamer != nil

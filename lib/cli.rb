@@ -21,6 +21,11 @@ class CLI
       puts "#{i}. #{dreamer.name}"
     end
   end
+
+  def make_dreamers
+    dreamers_array = Scraper.scrape_index_page(BASE_URL)
+    Dreamer.create_from_collection(dreamers_array)
+  end
 end
 
 

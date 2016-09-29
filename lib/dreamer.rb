@@ -22,12 +22,16 @@ class Dreamer
     @stories = {}
   end
 
-  def self.new_from_profile(dream)
-    self.new(
-    dream.css("p").text
-#    "http://immigrants.mndigital.org/#{dream.css("a.exhibit-item.exhibit-gallery-item").attribute("href").text}"
-    )
+  def self.create_from_collection(dreamers_array)
+    dreamers_array.each {|name| self.new(name)}
   end
+
+#  def self.new_from_profile(dream)
+#    self.new(
+#    dream.css("p").text
+#    "http://immigrants.mndigital.org/#{dream.css("a.exhibit-item.exhibit-gallery-item").attribute("href").text}"
+#    )
+#  end
 
 #  def self.new_from_url(url)
 #    Dreamer.new.tap do |dreamer|

@@ -10,8 +10,10 @@ class Scraper
 
   def scrape_index_page
     dream = Nokogiri::HTML(open("http://immigrants.mndigital.org/exhibits/show/immigrantstories-exhibit/page01"))
-    dream.css.each do |dream|
-      Dreamer.new_from_profile(dream)
+    dream.css.map do |dream|
+      {        
+        :name => dream.css("p").text
+      }
     end
   end
 

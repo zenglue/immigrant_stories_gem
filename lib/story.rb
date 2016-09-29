@@ -7,9 +7,11 @@ require_relative '../lib/dreamer.rb'
 
 class Story
 
+
   attr_reader :dreamer, :profile_url, :profile_video, :video_transcript
 
   @@all = []
+
 
   def initialize(dreamer=nil)
     @dreamer = dreamer
@@ -21,14 +23,16 @@ class Story
     end
   end
 
+
   def self.new_from_profile(profile_url)
+
     profile_url = "http://immigrants.mndigital.org/#{proile_url.css("a.exhibit-item.exhibit-gallery-item").attribute("href").text}"
     dreamer = self.new tap do |dream|
-       profile_url(profile_url) each {|k,v| self.send("#{k}=", v)}
-      end
+
+      profile_url(profile_url).each {|k,v| self.send("#{k}=", v)}
     end
-    dreamer.save
-    dreamer
+#    dreamer.save
+#    dreamer
   end
 
   def self.new_from_hash
@@ -54,19 +58,20 @@ class Story
   def dreamer=(dreamer)
     @dreamer = dreamer
   end
-
-  def self.find_by_region(region)
-#    @@all.find_all {|reg| reg == region}
-    dreamer = @@all.sort_by(region)
-  end
-
-  def self.find_by_ethnicity(ethnicity)
-#    @@all.find_all {|ethnic| ethnic == ethnicity}
-    dreamer = @@all.sort_by(ethnicity)
-  end
-
-  def self.find_by_language(language)
-#    @@all.find_all {|langu| langu == language}
-    dreamer = @@all.sort_by(language)
-  end
 end
+
+#  def self.find_by_region(region)
+#    @@all.find_all {|reg| reg == region}
+#    dreamer = @@all.sort_by(region)
+#  end
+
+#  def self.find_by_ethnicity(ethnicity)
+#    @@all.find_all {|ethnic| ethnic == ethnicity}
+#    dreamer = @@all.sort_by(ethnicity)
+#  end
+
+#  def self.find_by_language(language)
+#    @@all.find_all {|langu| langu == language}
+#    dreamer = @@all.sort_by(language)
+#  end
+#end

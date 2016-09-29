@@ -24,16 +24,16 @@ class Story
   end
 
 
-  def self.new_from_profile(profile_url)
-
-    profile_url = "http://immigrants.mndigital.org/#{proile_url.css("a.exhibit-item.exhibit-gallery-item").attribute("href").text}"
-    dreamer = self.new tap do |dream|
-
-      profile_url(profile_url).each {|k,v| self.send("#{k}=", v)}
-    end
+#  def self.new_from_profile(profile_url)
+#
+#    profile_url = "http://immigrants.mndigital.org/#{proile_url.css("a.exhibit-item.exhibit-gallery-item").attribute("href").text}"
+#    dreamer = self.new tap do |dream|
+#
+#      profile_url(profile_url).each {|k,v| self.send("#{k}=", v)}
+#    end
 #    dreamer.save
 #    dreamer
-  end
+#  end
 
   def self.new_from_hash
     stories = self.new_from_hash

@@ -22,12 +22,12 @@ class CLI
     end
     puts ""
   end
-
-
-
-  def start
-    puts ""
-    puts "Whose immigration story would you like to listen to?"
-    input = gets.chomp
-  end
 end
+
+
+#  def start
+#    puts ""
+#    puts "Whose immigration story would you like to listen to?"
+#    input = gets.chomp
+#  end
+#end

@@ -12,7 +12,8 @@ class Scraper
     doc = Nokogiri::HTML(open("http://immigrants.mndigital.org/exhibits/show/immigrantstories-exhibit/page01"))
     binding.pry
   end
-
+end
+Scraper.new.get_page
   def scrape_index_page
     self.get_page.css
 
@@ -40,5 +41,3 @@ class Scraper
     dreamer_attributes
   end
 end
-
-Scraper.new.get_page

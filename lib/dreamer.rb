@@ -14,17 +14,6 @@ class Dreamer
 
   @@all = []
 
-<<<<<<< HEAD
-=======
-  def self.new_from_profile(dream)
-    self.new(
-    dream.css("p").text,
-    "http://immigrants.mndigital.org/#{dream.css("a.exhibit-item.exhibit-gallery-item").attribute("href").text}"
-    )
-    end
-  end
->>>>>>> parent of 256a833... no more errors, but not scraping either
-
   def initialize(name=nil, profile_url=nil)
     @name = name
     @profile_url = profile_url
@@ -32,16 +21,12 @@ class Dreamer
     @stories = {}
   end
 
-  def self.create_from_collection(dreamers_array)
-    dreamers_array.each {|name| self.new(name)}
+  def self.new_from_profile(dream)
+    self.new(
+    dream.css("p").text,
+    "http://immigrants.mndigital.org/#{dream.css("a.exhibit-item.exhibit-gallery-item").attribute("href").text}"
+    )
   end
-
-#  def self.new_from_profile(dream)
-#    self.new(
-#    dream.css("p").text
-#    "http://immigrants.mndigital.org/#{dream.css("a.exhibit-item.exhibit-gallery-item").attribute("href").text}"
-#    )
-#  end
 
 #  def self.new_from_url(url)
 #    Dreamer.new.tap do |dreamer|

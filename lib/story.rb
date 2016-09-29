@@ -9,7 +9,7 @@ require_relative '../lib/cli.rb'
 class Story
 
 
-  attr_reader :dreamer, :profile_video, :video_transcript
+  attr_accessor :dreamer, :profile_video, :video_transcript
 
   @@all = []
 

@@ -9,11 +9,11 @@ require_relative '../lib/cli.rb'
 class Dreamer
 
 
-  attr_accessor :name, :profile_url, :bio, :ethnicity, :world_region, :language, :profile_video, :video_transcript, :stories
+  attr_accessor :name, :profile_url, :bio, :ethnicity, :world_region, :language, :stories
 
 
   @@all = []
-  
+
 
   def initialize(name=nil, profile_url=nil)
     @name = name
@@ -24,10 +24,16 @@ class Dreamer
 
   def self.new_from_profile(dream)
     self.new(
-    dream.css("p").text,
-    "http://immigrants.mndigital.org/#{dream.css("a.exhibit-item.exhibit-gallery-item").attribute("href").text}"
+    dream.css("p").text
+#    "http://immigrants.mndigital.org/#{dream.css("a.exhibit-item.exhibit-gallery-item").attribute("href").text}"
     )
   end
+
+#  def self.new_from_url(url)
+#    Dreamer.new.tap do |dreamer|
+#      Scraper.url(url) each {|k,v| dreamer.send("#{k}=", v)}
+#    end
+#  end
 
   def self.all
     @@all

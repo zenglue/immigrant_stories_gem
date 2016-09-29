@@ -9,12 +9,16 @@ require_relative '../lib/cli.rb'
 class Scraper
 
   def get_page
-    Nokogiri::HTML(open("http://immigrants.mndigital.org/exhibits/show/immigrantstories-exhibit/page01"))
+    doc = Nokogiri::HTML(open("http://immigrants.mndigital.org/exhibits/show/immigrantstories-exhibit/page01"))
+    binding.pry
   end
 
   def scrape_index_page
+    self.get_page.css
+
+  def scrape_index_page
     dreamers = Nokogiri::HTML(open("http://immigrants.mndigital.org/exhibits/show/immigrantstories-exhibit/page01"))
-    dreamers.css.each do |dream|      
+    dreamers.css.each do |dream|
       Dreamer.new_from_profile(dream)
     end
   end
@@ -36,3 +40,5 @@ class Scraper
     dreamer_attributes
   end
 end
+
+Scraper.new.get_page

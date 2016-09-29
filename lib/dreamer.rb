@@ -20,11 +20,11 @@ class Dreamer
   end
 
   def self.new_from_profile
-    dreamers = Nokogiri::HTML(open("http://immigrants.mndigital.org/exhibits/show/immigrantstories-exhibit/page01"))
+    index_url = Nokogiri::HTML(open("http://immigrants.mndigital.org/exhibits/show/immigrantstories-exhibit/page01"))
 
     self.new(
-    dreamers.css("p").map(&:text)
-#    "http://immigrants.mndigital.org/#{dreamers.css("a.exhibit-item.exhibit-gallery-item").attribute("href").text}"
+    index_url.css("p").map {|p| p.text},
+    "http://immigrants.mndigital.org/#{index_url.css("a.exhibit-item-link").attribute("href").text}"
     )
   end
 
@@ -42,6 +42,7 @@ class Dreamer
     self.all[id-1]
   end
 end
+
 #  def add_dreamer_attributes(dreamers_hash)
 #    dreamers_hash.each {|key, value| self.send("#{key}=", value)}
 #  end

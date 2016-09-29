@@ -23,7 +23,7 @@ class Dreamer
     dreamers = Nokogiri::HTML(open("http://immigrants.mndigital.org/exhibits/show/immigrantstories-exhibit/page01"))
 
     self.new(
-    dreamers.css("p").text,
+    dreamers.css("p").map(&:text)
 #    "http://immigrants.mndigital.org/#{dreamers.css("a.exhibit-item.exhibit-gallery-item").attribute("href").text}"
     )
   end

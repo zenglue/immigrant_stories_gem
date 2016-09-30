@@ -9,7 +9,7 @@ require_relative '../lib/scraper.rb'
 class CLI
 
   def call
-    Dreamer.new.new_from_profile
+    Scraper.new.scrape_index_page
     list
   end
 

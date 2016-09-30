@@ -1,18 +1,9 @@
-require 'nokogiri'
-require 'open-uri'
-require 'pry'
-
-require_relative '../immigrant_stories/scraper.rb'
-require_relative '../immigrant_stories/cli.rb'
 
 class Dreamer
 
-
   attr_accessor :name, :profile_url, :bio, :ethnicity, :world_region, :language, :story
 
-
   @@all = []
-
 
   def initialize(profile_url=nil)
     @profile_url = profile_url

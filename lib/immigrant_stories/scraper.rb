@@ -1,9 +1,3 @@
-require 'nokogiri'
-require 'open-uri'
-require 'pry'
-
-require_relative '../immigrant_stories/dreamer.rb'
-require_relative '../immigrant_stories/cli.rb'
 
 class Scraper
 

@@ -12,7 +12,7 @@ class CLI
     puts "...and still loading"
 
     profile_urls = Scraper.scrape_index_page
-    profile_urls.each {|url| Dreamer.new(url)}
+    profile_urls.each {|dreamer| Dreamer.new_from_profile_url(profile_urls)}
 
     start
   end

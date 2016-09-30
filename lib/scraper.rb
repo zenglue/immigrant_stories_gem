@@ -24,7 +24,6 @@ class Scraper
     profile_urls = index_url.css("div.exhibit-gallery-item a").map {|link| "http://immigrants.mndigital.org" + link['href']}
     profile_urls
 #    binding.pry
-    end
   end
 
   def self.all
@@ -43,7 +42,7 @@ class Scraper
     ethnicity ||= profile_url.css("[@id='item-type-ethnicity'] div a").text
     region ||= profile_url.css("[@id='item-type-world-region'] div a").text
     language ||= profile_url.css("[@id='dublin-core-language'] div a").text
-    profile_video ||= profile_file.css("[@id='playlist'] li[1] a").attribute("href").value
+    profile_video ||= profile_url.css("[@id='playlist'] li[1] a").attribute("href").value
     video_transcript ||= profile_url.css("[@id='item-transcription'] div").text
 
     dreamer_attributes[:name] = name
@@ -55,3 +54,4 @@ class Scraper
     dreamer_attributes[:story] = video_transcript
     dreamer_attributes
   end
+end

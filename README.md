@@ -1,10 +1,10 @@
 Immigrant Stories
 
-This Ruby Gem provides a CLI to view immigration stories @ http://immigrants.mndigital.org/exhibits/show/immigrantstories-exhibit/page01
+This Ruby Gem provides a CLI to view American immigration stories @ http://immigrants.mndigital.org/exhibits/show/immigrantstories-exhibit/page01
 
 Installation
 
-$ gem install the_counted-cli-gem
+$ gem install immigrant_stories_cli_gem
 Usage
 
 Type the below and follow the on screen prompts.

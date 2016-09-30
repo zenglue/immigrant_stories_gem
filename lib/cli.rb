@@ -94,12 +94,3 @@ class Immigrants::CLI
     exit
   end
 end
-
-
-
-#  def add_attributes_to_dreamers
-#    Dreamer.all.each do |dreamer|
-#      attributes = Scraper.scrape_dreamer_profiles(dreamer.profile_url)
-#      dreamer.add_dreamer_attributes(attributes)
-#    end
-#  end

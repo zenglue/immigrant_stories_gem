@@ -8,6 +8,15 @@ require_relative '../lib/scraper.rb'
 class CLI
 
   def call
+
+    puts "loading..."
+    puts ""
+    puts ""
+    puts "...and still loading"
+    puts ""
+    puts ""
+    puts " don't we love nokogiri?"
+
     profile_urls = Scraper.scrape_index_page
     profile_urls.each {|url| Dreamer.new(url)}
 #    Dreamer.new_from_profile #kind of crap but maybe
@@ -17,7 +26,7 @@ class CLI
 
   def list
     puts ""
-    Dreamer.all.each.with_index(1) {|dreamer, i| "#{i}. #{dreamer.name}"}
+    Dreamer.all.each.with_index(1) {|dreamer, i| puts "#{i}. #{dreamer.name}"}
     end
   end
 
@@ -35,7 +44,7 @@ class CLI
 
 
     puts ""
-    puts "Whose immigration story would you like hear?"
+    puts "Whose immigration story would you like to hear?"
     puts ""
     list
     puts ""

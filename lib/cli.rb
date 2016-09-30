@@ -3,7 +3,6 @@ require 'open-uri'
 require 'pry'
 
 require_relative '../lib/dreamer.rb'
-require_relative '../lib/story.rb'
 require_relative '../lib/scraper.rb'
 
 class CLI
@@ -25,13 +24,15 @@ class CLI
   def profile_info(dreamer)
     puts ""
     puts "#{dreamer.name}"
-    puts "Bio:" + " #{dreamer.bio}"
-    puts "World Region:" + " #{dreamer.world_region}"
-    puts "Ethnicity:" + "#{dreamer.ethnicity}"
+    puts ""
+    puts "Bio:" + "  #{dreamer.bio}"
+    puts "World Region:" + "  #{dreamer.world_region}"
+    puts "Ethnicity:" + "  #{dreamer.ethnicity}"
     puts "Language:" + " #{dreamer.language}"
   end
 
   def start
+
 
     puts ""
     puts "Whose immigration story would you like hear?"
@@ -69,7 +70,6 @@ class CLI
       end
     end
   end
-end
 
 
 #  def add_attributes_to_dreamers
@@ -78,11 +78,3 @@ end
 #      dreamer.add_dreamer_attributes(attributes)
 #    end
 #  end
-
-
-#  def start
-#    puts ""
-#    puts "Whose immigration story would you like to listen to?"
-#    input = gets.chomp
-#  end
-#end

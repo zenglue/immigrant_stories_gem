@@ -3,7 +3,6 @@ require 'open-uri'
 require 'pry'
 
 require_relative '../lib/dreamer.rb'
-require_relative '../lib/story.rb'
 require_relative '../lib/cli.rb'
 
 class Scraper
@@ -34,6 +33,7 @@ class Scraper
 
   def scrape_dreamer_profiles(dreamer)
 
+
     profile_url = Nokogiri::HTML(open(dreamer.profile_url))
 
     dreamer_attributes = {}
@@ -55,4 +55,3 @@ class Scraper
     dreamer_attributes[:story] = video_transcript
     dreamer_attributes
   end
-end

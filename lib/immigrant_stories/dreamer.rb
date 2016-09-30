@@ -1,7 +1,7 @@
 
 class Dreamer
 
-  attr_accessor :name, :profile_url, :bio, :ethnicity, :world_region, :language, :story
+  attr_accessor :name, :profile_url, :bio, :ethnicity, :world_region, :language, :story, :video_url
 
   @@all = []
 
@@ -19,6 +19,7 @@ class Dreamer
     @language = attributes[:language]
     @world_region = attributes[:world_region]
     @story = attributes[:story]
+    @video_url = attributes[:profile_video]
   end
 
   def self.all

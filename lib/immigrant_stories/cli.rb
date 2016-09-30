@@ -28,6 +28,8 @@ class CLI
     puts ""
     puts "Bio:" + "  #{dreamer.bio}"
     puts ""
+    puts "Video Url Of Story" + "  #{dreamer.video_url}"
+    puts ""
     puts "World Region:" + "  #{dreamer.world_region}"
     puts ""
     puts "Ethnicity:" + "  #{dreamer.ethnicity}"
@@ -37,7 +39,7 @@ class CLI
 
   def start
     puts ""
-    puts "Whose immigration story would you like to hear?"
+    puts "Whose immigration story would you like to read?"
     puts ""
 
     list

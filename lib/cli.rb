@@ -19,6 +19,15 @@ class CLI
     end
   end
 
+  def profile_info(dreamer)
+    puts ""
+    puts "#{dreamer.name}"
+    puts "bio:" + " #{dreamer.bio}"
+    puts "location:" + " #{dreamer.location}"
+    puts "ethnicity:" + "#{dreamer.ethnicity}"
+    puts "language:" + " #{dreamer.language}"
+  end
+
   def start
 
     puts ""
@@ -29,6 +38,28 @@ class CLI
     input = gets.chomp
 
     dreamer = Dreamer.find(input.to_i)
+
+    puts ""
+    puts "#{dreamer.story}"
+    puts ""
+    puts "Would you like more info on #{dreamer.name}?"
+    puts "Yes or No?"
+
+    input = gets.chomp.downcase
+    if input == ("yes" || "y")
+      profile_info(dreamer)
+      puts "Would you like to read another story?"
+      puts "Yes or No?"
+
+      input = gets.chomp.downcase
+      if input == ("yes" || "y")
+        start
+      else
+        puts ""
+        puts "See you later!"
+        exit
+      end
+    end
   end
 end
 

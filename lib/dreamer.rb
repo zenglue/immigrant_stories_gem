@@ -14,6 +14,7 @@ class Dreamer
 
   @@all = []
 
+
   def initialize(name=nil, profile_url=nil)
     @name = name
     @profile_url = profile_url
@@ -23,8 +24,8 @@ class Dreamer
 
   def self.new_from_profile(dream)
     self.new(
-    dream.css("p").text,
-    dream.css("div.exhibit-gallery-item a").map {|link| "http://immigrants.mndigital.org" + link['href']}
+    dream.css("p").text
+#    "http://immigrants.mndigital.org/#{dream.css("a.exhibit-item.exhibit-gallery-item").attribute("href").text}"
     )
   end
 
@@ -42,6 +43,7 @@ class Dreamer
     self.all[id-1]
   end
 end
+
 #  def add_dreamer_attributes(dreamers_hash)
 #    dreamers_hash.each {|key, value| self.send("#{key}=", value)}
 #  end

@@ -35,8 +35,11 @@ class CLI
     puts "#{dreamer.name}"
     puts ""
     puts "Bio:" + "  #{dreamer.bio}"
+    puts ""
     puts "World Region:" + "  #{dreamer.world_region}"
+    puts ""
     puts "Ethnicity:" + "  #{dreamer.ethnicity}"
+    puts ""
     puts "Language:" + " #{dreamer.language}"
   end
 

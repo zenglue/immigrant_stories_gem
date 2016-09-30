@@ -19,6 +19,10 @@ class Dreamer
     attributes = Scraper.scrape_dreamer_profiles(self)
     @name = attributes[:name]
     @bio = attributes[:bio]
+    @ethnicity = attributes[:ethnicity]
+    @language = attributes[:language]
+    @world_region = attributes[:world_region]
+    @story = attributes[:story]
     @@all << self
   end
 

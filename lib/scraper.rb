@@ -5,7 +5,7 @@ require 'pry'
 require_relative '../lib/dreamer.rb'
 require_relative '../lib/cli.rb'
 
-class Scraper
+class immigrants::Scraper
   @@all = {}
 
   def self.scrape_index_page
@@ -15,7 +15,6 @@ class Scraper
     index_array = index_url.css("p").map(&:text)
 
     profile_urls = index_url.css("div.exhibit-gallery-item a").map {|link| "http://immigrants.mndigital.org" + link['href']}
-#    profile_urls
   end
 
 #    index_array.each_with_index {|name, i| @@all[name] = profile_urls[i]}

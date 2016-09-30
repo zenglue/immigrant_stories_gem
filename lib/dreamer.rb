@@ -5,7 +5,7 @@ require 'pry'
 require_relative '../lib/scraper.rb'
 require_relative '../lib/cli.rb'
 
-class Dreamer
+class Immigrants::Dreamer
 
 
   attr_accessor :name, :profile_url, :bio, :ethnicity, :world_region, :language, :story

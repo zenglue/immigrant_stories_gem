@@ -5,7 +5,7 @@ require 'pry'
 require_relative '../lib/dreamer.rb'
 require_relative '../lib/scraper.rb'
 
-class CLI
+class Immigrants::CLI
 
   def call
 

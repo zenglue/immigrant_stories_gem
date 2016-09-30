@@ -44,12 +44,12 @@ class CLI
   end
 
   def start
-
-
     puts ""
     puts "Whose immigration story would you like to hear?"
     puts ""
+
     list
+
     puts ""
 
     input = gets.chomp
@@ -62,26 +62,39 @@ class CLI
     puts "Would you like more info on #{dreamer.name}?"
     puts "Yes or No?"
 
+    input = gets.chomp.downcase
+
+    if input == ("yes" || "y")
+
+
+      profile_info(dreamer)
+
+      how_about_another
+    else
+      puts ""
+      how_about_another
+    end
+  end
+
+
+  def how_about_another
+    puts ""
+    puts "Would you like to read another story?"
+    puts "Yes or No?"
 
     input = gets.chomp.downcase
 
     if input == ("yes" || "y")
 
-      profile_info(dreamer)
-      puts "Would you like to read another story?"
-      puts "Yes or No?"
-
-      input = gets.chomp.downcase
-
-      if input == ("yes" || "y")
-        start
-      else
-        puts ""
-        puts "See you later!"
-        exit
-      end
-    end
+      start
+      
+    else
+      puts ""
+      puts "See you later!"
+    exit
   end
+end
+
 
 
 #  def add_attributes_to_dreamers

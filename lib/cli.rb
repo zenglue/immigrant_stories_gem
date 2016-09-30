@@ -10,6 +10,7 @@ class CLI
 
   def call
     Scraper.new.scrape_index_page
+#    add_attributes_to_dreamers
     list
   end
 

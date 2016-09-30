@@ -8,10 +8,10 @@ Gem::Specification.new do |spec|
   spec.summary       = %q{Immigration Stories}
   spec.homepage      = "https://learn.co"
 
-  spec.files         = ["lib/cli.rb", "lib/dreamer.rb", "lib/immigrants.rb", "lib/immigrants.rb", "config/environment.rb"]
+  spec.files         = ["lib/immigrant_stories/cli.rb", "lib/immigrant_stories/dreamer.rb", "lib/immigrant_stories/immigrants.rb", "lib/immigrant_stories/immigrants.rb", "config/environment.rb"]
   spec.executables   = ["immigrant_stories"]
   spec.name          = "immigrant_stories_gem"
-  spec.require_paths = ["lib", "lib/immigrants"]
+  spec.require_paths = ["lib", "lib/immigrant_stories"]
   spec.version       = Immigrants::VERSION
   spec.license       = "MIT"
 

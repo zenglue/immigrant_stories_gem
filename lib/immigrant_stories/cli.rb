@@ -2,8 +2,8 @@ require 'nokogiri'
 require 'open-uri'
 require 'pry'
 
-require_relative '../lib/dreamer.rb'
-require_relative '../lib/scraper.rb'
+require_relative '../lib/immigrant_stories/dreamer.rb'
+require_relative '../lib/immigrant_stories/scraper.rb'
 
 class Immigrants::CLI
 

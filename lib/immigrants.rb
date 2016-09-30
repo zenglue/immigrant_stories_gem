@@ -1,4 +1,4 @@
+require_relative '../config/environment'
+
 module Immigrants
 end
-
-require_relative '../config/environment'

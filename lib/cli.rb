@@ -38,6 +38,7 @@ class CLI
     puts ""
     list
     puts ""
+
     input = gets.chomp
 
     dreamer = Dreamer.find(input.to_i)
@@ -48,13 +49,17 @@ class CLI
     puts "Would you like more info on #{dreamer.name}?"
     puts "Yes or No?"
 
+
     input = gets.chomp.downcase
+
     if input == ("yes" || "y")
+
       profile_info(dreamer)
       puts "Would you like to read another story?"
       puts "Yes or No?"
 
       input = gets.chomp.downcase
+
       if input == ("yes" || "y")
         start
       else
@@ -65,6 +70,7 @@ class CLI
     end
   end
 end
+
 
 #  def add_attributes_to_dreamers
 #    Dreamer.all.each do |dreamer|

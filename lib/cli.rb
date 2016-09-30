@@ -9,7 +9,9 @@ require_relative '../lib/scraper.rb'
 class CLI
 
   def call
-    Dreamer.new_from_profile #kind of crap but maybe
+    profile_urls = Scraper.scrape_index_page
+    profile_urls.each {|url| Dreamer.new(url)}
+#    Dreamer.new_from_profile #kind of crap but maybe
 #    add_attributes_to_dreamers
     start
   end

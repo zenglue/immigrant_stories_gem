@@ -19,10 +19,11 @@ class Scraper
     index_url = Nokogiri::HTML(open("http://immigrants.mndigital.org/exhibits/show/immigrantstories-exhibit/page01"))
 
     index_array = index_url.css("p").map(&:text)
-
-    index_array.each_with_index {|name, i| @@all[name] = profile_urls[i]}
-    
-#    index_url.css("div.exhibit-gallery-item a").map {|link| "http://immigrants.mndigital.org" + link['href']}
+#    dreamers.css.each do |dream|
+#      Dreamer.new_from_profile(dream)
+#    index_array.each_with_index {|name, i| @@all[name] = profile_urls[i]}
+    profile_urls = index_url.css("div.exhibit-gallery-item a").map {|link| "http://immigrants.mndigital.org" + link['href']}
+    profile_urls
 #    binding.pry
     end
   end

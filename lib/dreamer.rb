@@ -23,6 +23,7 @@ class Dreamer
 
   def self.new_from_profile(dream)
 #counter
+#this needs to go weird hook
     self.new(
     dream.css("p").map(&text)
     dream.css("div.exhibit-gallery-item a").map {|link| "http://immigrants.mndigital.org" + link['href']}
@@ -43,7 +44,3 @@ class Dreamer
     self.all[id-1]
   end
 end
-
-#  def add_dreamer_attributes(dreamers_hash)
-#    dreamers_hash.each {|key, value| self.send("#{key}=", value)}
-#  end

@@ -23,6 +23,10 @@ class Scraper
     end
   end
 
+  def self.all
+    @@all
+  end
+
   def scrape_dreamer_profiles(dreamer)
     profile_url = Nokogiri::HTML(open(dreamer.profile_url))
 

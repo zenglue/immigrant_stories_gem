@@ -7,7 +7,7 @@ class Dreamer
 
   def initialize(profile_url=nil)
     @profile_url = profile_url
-#    fill_out_profile
+    fill_out_profile
     @@all << self
   end
 
@@ -19,12 +19,6 @@ class Dreamer
     @language = attributes[:language]
     @world_region = attributes[:world_region]
     @story = attributes[:story]
-  end
-
-  def self.new_from_profile_url(profile_urls)
-    Dreamer.new.tap do |dreamer|
-      Scraper.scrape_dreamer_profiles(dreamer).each {|k,v| self.send("#{k}=", v)}
-    end
   end
 
   def self.all

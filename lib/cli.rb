@@ -9,7 +9,7 @@ require_relative '../lib/scraper.rb'
 class CLI
 
   def call
-    Scraper.new.new_dreamers
+    Scraper.new.scrape_index_page
     list
   end
 
@@ -20,9 +20,9 @@ class CLI
     Dreamer.all.each.with_index(1) do |dreamer, i|
       puts "#{i}. #{dreamer.name}"
     end
-    puts ""
   end
 end
+
 
 #  def start
 #    puts ""

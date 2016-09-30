@@ -24,8 +24,8 @@ class Dreamer
 
   def self.new_from_profile(dream)
     self.new(
-    dream.css("p").text
-#    "http://immigrants.mndigital.org/#{dream.css("a.exhibit-item.exhibit-gallery-item").attribute("href").text}"
+    dream.css("p").text,
+    dream.css("div.exhibit-gallery-item a").map {|link| "http://immigrants.mndigital.org" + link['href']}
     )
   end
 

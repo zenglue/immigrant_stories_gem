@@ -13,7 +13,7 @@ class Scraper
 #    binding.pry
 #  end
 
-  def scrape_index_page
+  def self.scrape_index_page
 
     index_url = Nokogiri::HTML(open("http://immigrants.mndigital.org/exhibits/show/immigrantstories-exhibit/page01"))
 
@@ -31,10 +31,10 @@ class Scraper
     @@all
   end
 
-  def scrape_dreamer_profiles(dreamer)
+  def self.scrape_dreamer_profiles(dreamer)
 
 
-    profile_url = Nokogiri::HTML(open(dreamer.profile_url))
+    profile_url = Nokogiri::HTML(open("#{dreamer.profile_url}"))
 
     dreamer_attributes = {}
 

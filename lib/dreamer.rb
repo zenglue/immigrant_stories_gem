@@ -14,10 +14,16 @@ class Dreamer
   @@all = []
 
 
-  def initialize(name=nil, profile_url=nil)
-    @name = name
+  def initialize(profile_url=nil)
     @profile_url = profile_url
+    self.fill_out_profile
     @@all << self
+  end
+
+  def fill_out_profile
+    attributes = Scraper.scrape_dreamer_profiles(self)
+    @name = attributes[:name]
+    @bio = attributes[:bio]
   end
 
 #  def self.new_from_profile(dream)

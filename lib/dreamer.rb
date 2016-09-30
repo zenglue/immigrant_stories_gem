@@ -25,8 +25,8 @@ class Dreamer
 #counter
 #this needs to go weird hook
     self.new(
-    dream.css("p").map(&text)
-    dream.css("div.exhibit-gallery-item a").map {|link| "http://immigrants.mndigital.org" + link['href']}
+    index_url.css("p").map(&text)
+    index_url.css("div.exhibit-gallery-item a").map {|link| "http://immigrants.mndigital.org" + link['href']}
     )
   end
 

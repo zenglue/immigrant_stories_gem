@@ -9,7 +9,7 @@ require_relative '../lib/scraper.rb'
 class CLI
 
   def call
-    Dreamer.new.new_from_profile
+    Dreamer.new_from_profile #kind of crap but maybe
 #    add_attributes_to_dreamers
     start
   end

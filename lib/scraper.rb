@@ -9,9 +9,10 @@ require_relative '../lib/cli.rb'
 class Scraper
 
   def new_dreamers
-#    dreamers = Nokogiri::HTML(open("http://immigrants.mndigital.org/exhibits/show/immigrantstories-exhibit/page01"))
-#    dreamers.css.each do |dream|
-    Dreamer.new_from_profile  
+    dreamers = Nokogiri::HTML(open("http://immigrants.mndigital.org/exhibits/show/immigrantstories-exhibit/page01"))
+    dreamers.css.each do |dream|
+      Dreamer.new_from_profile(dream)
+    end
   end
 
   def scrape_dreamer_profiles

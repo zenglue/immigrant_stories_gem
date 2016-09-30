@@ -17,7 +17,10 @@ class CLI
     puts ""
     puts "Whose immigration story would you like to listen to?"
     puts ""
-    Dreamer.all.each.with_index(1) {|dreamer, x| puts "#{x}. #{dreamer.name}"}
+    Dreamer.all.each.with_index(1) do |dreamer, i|
+      puts "#{i}. #{dreamer.name}"
+    end
+    puts ""
   end
 end
 

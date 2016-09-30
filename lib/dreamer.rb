@@ -8,7 +8,9 @@ require_relative '../lib/cli.rb'
 
 class Dreamer
 
+
   attr_accessor :name, :profile_url, :bio, :ethnicity, :world_region, :language, :stories
+
 
   @@all = []
 
@@ -19,12 +21,10 @@ class Dreamer
     @stories = {}
   end
 
-  def self.new_from_profile
-    index_url = Nokogiri::HTML(open("http://immigrants.mndigital.org/exhibits/show/immigrantstories-exhibit/page01"))
-
+  def self.new_from_profile(dream)
     self.new(
-    index_url.css("p").map {|p| p.text},
-    "http://immigrants.mndigital.org/#{index_url.css("a.exhibit-item-link").attribute("href").text}"
+    dream.css("p").text,
+    dream.css("div.exhibit-gallery-item a").map {|link| "http://immigrants.mndigital.org" + link['href']}
     )
   end
 
@@ -42,7 +42,6 @@ class Dreamer
     self.all[id-1]
   end
 end
-
 #  def add_dreamer_attributes(dreamers_hash)
 #    dreamers_hash.each {|key, value| self.send("#{key}=", value)}
 #  end

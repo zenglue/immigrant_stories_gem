@@ -22,6 +22,7 @@ class Dreamer
   end
 
   def self.new_from_profile(dream)
+#counter
     self.new(
     dream.css("p").map(&text)
     dream.css("div.exhibit-gallery-item a").map {|link| "http://immigrants.mndigital.org" + link['href']}

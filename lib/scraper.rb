@@ -24,16 +24,21 @@ class Scraper
     profile_url = story.profile_url
 
     dreamer_attributes = {}
-
+    name ||= profile_url.css("[@id='dublin-core-title'] div").text
     bio ||= profile_url.css("[@id='dublin-core-description'] div").text
     ethnicity ||= profile_url.css("[@id='item-type-ethnicity'] div a").text
     region ||= profile_url.css("[@id='item-type-world-region'] div a").text
     language ||= profile_url.css("[@id='dublin-core-language'] div a").text
+    profile_video ||= profile_file.css("[@id='playlist'] li[1] a").attribute("href").value
+    video_transcript ||= profile_url.css("[@id='item-transcription'] div").text
 
+    dreamer_attributes[:name] = name
     dreamer_attributes[:bio] = bio
     dreamer_attributes[:ethnicity] = ethnicity
     dreamer_attributes[:region] = region
     dreamer_attributes[:language] = language
+    dreamer_attributes[:profile_video] = profile_video
+    dreamer_attributes[:story] = video_transcript
     dreamer_attributes
   end
 end

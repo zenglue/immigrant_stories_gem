@@ -17,8 +17,8 @@ class Immigrants::CLI
     puts ""
     puts " don't we love nokogiri?"
 
-    profile_urls = Scraper.scrape_index_page
-    profile_urls.each {|url| Dreamer.new(url)}
+    profile_urls = Immigrants::Scraper.scrape_index_page
+    profile_urls.each {|url| Immigrants::Dreamer.new(url)}
 
     start
   end
@@ -53,7 +53,7 @@ class Immigrants::CLI
 
     input = gets.chomp
 
-    dreamer = Dreamer.find(input.to_i)
+    dreamer = Immigrants::Dreamer.find(input.to_i)
 
     puts ""
     puts "#{dreamer.story}"

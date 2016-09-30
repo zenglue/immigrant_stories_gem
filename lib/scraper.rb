@@ -5,7 +5,7 @@ require 'pry'
 require_relative '../lib/dreamer.rb'
 require_relative '../lib/cli.rb'
 
-class immigrants::Scraper
+class Immigrants::Scraper
   @@all = {}
 
   def self.scrape_index_page

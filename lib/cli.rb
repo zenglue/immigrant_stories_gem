@@ -19,8 +19,7 @@ class CLI
 
     profile_urls = Scraper.scrape_index_page
     profile_urls.each {|url| Dreamer.new(url)}
-#    Dreamer.new_from_profile #kind of crap but maybe
-#    add_attributes_to_dreamers
+
     start
   end
 
@@ -70,6 +69,7 @@ class CLI
       profile_info(dreamer)
 
       how_about_another
+
     else
       puts ""
       how_about_another
@@ -87,7 +87,7 @@ class CLI
     if input == ("yes" || "y")
 
       start
-      
+
     else
       puts ""
       puts "See you later!"

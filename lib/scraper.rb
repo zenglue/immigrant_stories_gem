@@ -8,23 +8,17 @@ require_relative '../lib/cli.rb'
 class Scraper
   @@all = {}
 
-#  def get_page
-#    doc = Nokogiri::HTML(open("http://immigrants.mndigital.org/exhibits/show/immigrantstories-exhibit/page01"))
-#    binding.pry
-#  end
-
   def self.scrape_index_page
 
     index_url = Nokogiri::HTML(open("http://immigrants.mndigital.org/exhibits/show/immigrantstories-exhibit/page01"))
 
     index_array = index_url.css("p").map(&:text)
-#    dreamers.css.each do |dream|
-#      Dreamer.new_from_profile(dream)
-#    index_array.each_with_index {|name, i| @@all[name] = profile_urls[i]}
+
     profile_urls = index_url.css("div.exhibit-gallery-item a").map {|link| "http://immigrants.mndigital.org" + link['href']}
-    profile_urls
-#    binding.pry
+#    profile_urls
   end
+
+#    index_array.each_with_index {|name, i| @@all[name] = profile_urls[i]}
 
   def self.all
     @@all

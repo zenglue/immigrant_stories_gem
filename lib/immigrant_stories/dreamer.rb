@@ -2,10 +2,10 @@ require 'nokogiri'
 require 'open-uri'
 require 'pry'
 
-require_relative '../lib/immigrant_stories/scraper.rb'
-require_relative '../lib/immigrant_stories/cli.rb'
+require_relative '../immigrant_stories/scraper.rb'
+require_relative '../immigrant_stories/cli.rb'
 
-class Immigrants::Dreamer
+class Dreamer
 
 
   attr_accessor :name, :profile_url, :bio, :ethnicity, :world_region, :language, :story
@@ -21,7 +21,7 @@ class Immigrants::Dreamer
   end
 
   def fill_out_profile
-    attributes = Immigrants::Scraper.scrape_dreamer_profiles(self)
+    attributes = Scraper.scrape_dreamer_profiles(self)
     @name = attributes[:name]
     @bio = attributes[:bio]
     @ethnicity = attributes[:ethnicity]

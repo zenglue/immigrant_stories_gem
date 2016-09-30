@@ -2,23 +2,23 @@ require 'nokogiri'
 require 'open-uri'
 require 'pry'
 
-require_relative '../lib/immigrant_stories/dreamer.rb'
-require_relative '../lib/immigrant_stories/scraper.rb'
+require_relative '../immigrant_stories/dreamer.rb'
+require_relative '../immigrant_stories/scraper.rb'
 
-class Immigrants::CLI
+class CLI
 
   def call
 
     puts "loading..."
     puts ""
     puts ""
+    puts ""
+    puts ""
+    puts ""
     puts "...and still loading"
-    puts ""
-    puts ""
-    puts " don't we love nokogiri?"
 
-    profile_urls = Immigrants::Scraper.scrape_index_page
-    profile_urls.each {|url| Immigrants::Dreamer.new(url)}
+    profile_urls = Scraper.scrape_index_page
+    profile_urls.each {|url| Dreamer.new(url)}
 
     start
   end
@@ -53,7 +53,7 @@ class Immigrants::CLI
 
     input = gets.chomp
 
-    dreamer = Immigrants::Dreamer.find(input.to_i)
+    dreamer = Dreamer.find(input.to_i)
 
     puts ""
     puts "#{dreamer.story}"
@@ -65,7 +65,6 @@ class Immigrants::CLI
 
     if input == ("yes" || "y")
 
-
       profile_info(dreamer)
 
       how_about_another
@@ -75,7 +74,6 @@ class Immigrants::CLI
       how_about_another
     end
   end
-
 
   def how_about_another
     puts ""

@@ -7,6 +7,7 @@ require_relative '../lib/story.rb'
 require_relative '../lib/cli.rb'
 
 class Scraper
+  @@all = {}
 
 #  def get_page
 #    doc = Nokogiri::HTML(open("http://immigrants.mndigital.org/exhibits/show/immigrantstories-exhibit/page01"))
@@ -15,15 +16,18 @@ class Scraper
 
   def scrape_index_page
     dreamers = Nokogiri::HTML(open("http://immigrants.mndigital.org/exhibits/show/immigrantstories-exhibit/page01"))
-    dreamers.css.each do |dream|
-      Dreamer.new_from_profile(dream)
+    index_array = index_url.css("p").map(&:text)
+#    dreamers.css.each do |dream|
+#      Dreamer.new_from_profile(dream)
+    index_array.each_with_index {|name, i| @@all[name] = profile_urls[i]}
     end
   end
 
-  def scrape_dreamer_profiles
-    profile_url = story.profile_url
+  def scrape_dreamer_profiles(dreamer)
+    profile_url = Nokogiri::HTML(open(dreamer.profile_url))
 
     dreamer_attributes = {}
+
     name ||= profile_url.css("[@id='dublin-core-title'] div").text
     bio ||= profile_url.css("[@id='dublin-core-description'] div").text
     ethnicity ||= profile_url.css("[@id='item-type-ethnicity'] div a").text
@@ -35,7 +39,7 @@ class Scraper
     dreamer_attributes[:name] = name
     dreamer_attributes[:bio] = bio
     dreamer_attributes[:ethnicity] = ethnicity
-    dreamer_attributes[:region] = region
+    dreamer_attributes[:world_region] = region
     dreamer_attributes[:language] = language
     dreamer_attributes[:profile_video] = profile_video
     dreamer_attributes[:story] = video_transcript

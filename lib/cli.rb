@@ -22,10 +22,10 @@ class CLI
   def profile_info(dreamer)
     puts ""
     puts "#{dreamer.name}"
-    puts "bio:" + " #{dreamer.bio}"
-    puts "location:" + " #{dreamer.location}"
-    puts "ethnicity:" + "#{dreamer.ethnicity}"
-    puts "language:" + " #{dreamer.language}"
+    puts "Bio:" + " #{dreamer.bio}"
+    puts "World Region:" + " #{dreamer.world_region}"
+    puts "Ethnicity:" + "#{dreamer.ethnicity}"
+    puts "Language:" + " #{dreamer.language}"
   end
 
   def start

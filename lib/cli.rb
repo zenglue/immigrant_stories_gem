@@ -9,17 +9,26 @@ require_relative '../lib/scraper.rb'
 class CLI
 
   def call
-    Scraper.new.scrape_index_page
+    Dreamer.new.new_from_profile
     list
   end
 
   def list
     puts ""
-    puts "Whose immigration story would you like to listen to?"
-    puts ""
-    Dreamer.all.each.with_index(1) do |dreamer, i|
-      puts "#{i}. #{dreamer.name}"
+    Dreamer.all.each.with_index(1) {|dreamer, i| "#{i}. #{dreamer.name}"}
     end
+  end
+
+  def start
+
+    puts ""
+    puts "Whose immigration story would you like hear?"
+    puts ""
+    list
+    puts ""
+    input = gets.chomp
+
+    dreamer = Dreamer.find(input.to_i)
   end
 end
 

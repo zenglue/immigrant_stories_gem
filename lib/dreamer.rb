@@ -9,7 +9,7 @@ require_relative '../lib/cli.rb'
 class Dreamer
 
 
-  attr_accessor :name, :profile_url, :bio, :ethnicity, :world_region, :language, :stories
+  attr_accessor :name, :profile_url, :bio, :ethnicity, :world_region, :language, :story
 
 
   @@all = []
@@ -19,13 +19,12 @@ class Dreamer
     @name = name
     @profile_url = profile_url
     @@all << self
-    @stories = {}
   end
 
   def self.new_from_profile(dream)
     self.new(
-    dream.css("p").text
-#    "http://immigrants.mndigital.org/#{dream.css("a.exhibit-item.exhibit-gallery-item").attribute("href").text}"
+    dream.css("p").map(&text)
+    dream.css("div.exhibit-gallery-item a").map {|link| "http://immigrants.mndigital.org" + link['href']}
     )
   end
 

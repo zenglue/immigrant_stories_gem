@@ -9,7 +9,7 @@ require_relative '../lib/scraper.rb'
 class CLI
 
   def call
-    Scraper.new.scrape_index_page
+    Dreamer.new.new_from_profile
 #    add_attributes_to_dreamers
     start
   end

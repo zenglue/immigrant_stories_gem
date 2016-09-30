@@ -9,7 +9,7 @@ Usage
 
 Type the below and follow the on screen prompts.
 
-$ the_counted-cli-gem
+$ immigrant_stories_gem
 Development
 
 After checking out the repo, run bin/setup to install dependencies.
